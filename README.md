@@ -1,4 +1,4 @@
-# Session ID - Session Title
+# CX260 - Project "Spartacus" Storefront for SAP Commerce Cloud: Status and Plans
 
 ## Description
 
