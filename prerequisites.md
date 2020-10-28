@@ -30,6 +30,8 @@ If you have never build an Angular application locally, it would be a good exerc
 
 You should be able open the newly created application in a web browser, open [http://localhost:4200](http://localhost:4200).
 
+<a name="recommendations"></a>
+
 ## Recommended tools
 
 While not required, it is highly recommended that you use an IDE for Spartacus development. Most Spartacus developers use [Visual Studio Code](https://code.visualstudio.com/). VS code in an open source project that comes with a lot of useful features and has an extension market place with loads of additional extensions.
