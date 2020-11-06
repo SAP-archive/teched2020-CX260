@@ -7,17 +7,21 @@ Spartacus developer use nodejs for development. There are various tools that req
 Installing Node.js and other tools might take a bit of time and we have not planned for this during the session. It is therefor **important** that you come prepared.
 
 - **Node.js**  
-  Spartacus supports node.js version 10.14.1 or later, but smaller than version 13.0. Other Node.js versions might work, but are not actively tested. To check out you have node.js installed, run `node --version` in a terminal window.
+  Spartacus supports node.js version 10.14.1 or later, but smaller than version 13.0. Other Node.js versions might work, but are not actively tested.
+
+  You can run `node --version` in a terminal window to validate the installed version.
 
 - **node package manager**  
-  Node.js development depends on npm packages for many features and functions. To download and install npm packages, you need a package manager. The Spartacus team uses yarn, but npm will work similarly. The exercises in this session require npm client command line interface, which is installed with Node.js by default. To check that you have the npm client installed, run `yarn -v` in a terminal window. Spartacus supports version 1.15 or later.
+  Node.js development depends on npm packages for many features and functions. To download and install npm packages, you need a package manager. The Spartacus team uses [Yarn](https://yarnpkg.com/), but npm will work similarly. The exercises in this session require npm client command line interface, which is installed with Node.js by default.
+
+  Spartacus supports Yarn version 1.15 or later. You can run `yarn --version` in a terminal window to validate the installed version.
 
 - **Angular CLI**  
   Spartacus is distributed as npm packages, and as a Spartacus application developer you need to create an initial application.
 
   This requires the Angular CLI. The CLI can be installed as a (global) Node.js dependency, see the [Angular guide](https://angular.io/guide/setup-local#install-the-angular-cli) to install the Angular CLI.
 
-  Spartacus 2.0 supports Angular 9, where as Spartacus 3.0 will support Angular 10.
+  Spartacus 2.x supports Angular 9, where as Spartacus 3.0 will support Angular 10. We'll be using Spartacus 3 in the exercises, you should have Angular CLI 10 installed.
 
 ### Test your local environment
 

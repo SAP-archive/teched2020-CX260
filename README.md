@@ -18,7 +18,7 @@ There are also a few other [recommendations](./prerequisites.md#recommendations)
 
 Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
 
-- [Setup Spartacus locally ](exercises/ex0/)
+- [Setup Spartacus locally ](exercises/ex0/README.md)
 
 **IMPORTANT**
 
