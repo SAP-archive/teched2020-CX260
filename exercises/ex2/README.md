@@ -79,13 +79,14 @@ ng g i product-comparison/model
 
 (This is short for `ng generate interface`)
 
-### Step 5: Git
+You can already add the interface that you need in the following exercise:
 
----
-
-💡 If you haven't done already, it's a good time again to commit your changes.
-
----
+```ts
+export interface SelectionState {
+  code: string;
+  selected: boolean;
+}
+```
 
 ## Exercise 2.2 Add component to PDP
 
@@ -130,7 +131,7 @@ To control the selection, we delegate the logic to the `ComparisonSelectionServi
 
 We'll add this service to the constructor, we also add the `CurrentProductService` (from `@spartacus/storefront`) to get hold of the current product code, that we like to select. Our constructor will look like this:
 
-```ts
+```t
 constructor(
     private currentProduct: CurrentProductService,
     private comparisonSelection: ComparisonSelectionService
@@ -178,5 +179,9 @@ A common pattern to select a product for the product comparison list, is to tick
 ## Summary
 
 You've now generated an angular module, component and selector and added it to the standard Spartacus UI. You can already see the UI of Spartacus being effected by this change, but we will ad the actual selection logic in the next exercise.
+
+💡 If you haven't done already, it's a good time again to commit your changes.
+
+---
 
 Continue to part- [Exercise 3 - Implement selection service](../ex3/README.md)
