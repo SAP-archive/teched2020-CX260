@@ -2,7 +2,7 @@
 
 In this exercise, you will implement a button that can be used to select a product for the comparison. The button will be added to the Product Detail Page (PDP).
 
-We're going to gradually generate and build code in this exercise, but if you're in a hurry, you can copy the version you should end up with in the src folder. You can copy the content of the "ex2/src/product-comparison" folder in your local "app" folder.
+We're going to gradually generate and build code in this exercise, but if you're in a hurry, you can copy the version you should end up with in the src folder. You can copy the [content of the src folder](./src/product-comparison/) in your local "app" folder.
 
 ## Exercise 2.1 Generate files with the Angular CLI
 
@@ -184,4 +184,4 @@ You've now generated an angular module, component and selector and added it to t
 
 ---
 
-Continue to part- [Exercise 3 - Implement selection service](../ex3/README.md)
+Continue to part- [Exercise 3 - Implement selection service](../exercise-3/README.md)

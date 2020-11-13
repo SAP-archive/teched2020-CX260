@@ -85,4 +85,4 @@ Moreover, you can start developing your application without restarting the serve
 
 You've now installed Spartacus locally. If you run the storefront in [http//:localhost:4200](http//:localhost:4200) you should see the _electronics_ storefront content.
 
-Continue to - [Exercise 2 - Implement Product Comparison Selector](../ex2/README.md)
+Continue to - [Exercise 2 - Implement Product Comparison Selector](../exercise-2/README.md)

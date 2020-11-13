@@ -18,16 +18,16 @@ There are also a few other [recommendations](./prerequisites.md#recommendations)
 
 Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
 
-- [Exercise 1 – Setup Spartacus locally](exercises/ex1/README.md)
+- [Exercise 1 – Setup Spartacus locally](exercises/exercise-1/README.md)
   - Exercise 1.1 Confirm prerequisites
   - Exercise 1.2 Create Angular application
   - Exercise 1.3 Install Spartacus
   - Exercise 1.4 Run Spartacus
-- [Implement Product Comparison Selector](exercises/ex2/README.md)
+- [Implement Product Comparison Selector](exercises/exercise-2/README.md)
   - Exercise 2.1 Generate files with the Angular CLI
   - Exercise 2.2 Add component to PDP
   - Exercise 2.3 Selector implementation
-- [Exercise 3 - Implement Persistent Selection State](exercises/ex3/README.md)
+- [Exercise 3 - Implement Persistent Selection State](exercises/exercise-3/README.md)
   - Exercise 3.1 Toggle selection
   - Exercise 3.2 Persist selection
 

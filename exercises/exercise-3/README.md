@@ -86,4 +86,4 @@ You've now implemented the persisted state for the selection service. We're now 
 
 ---
 
-Continue to part- [Exercise 4 - Comparison Page ](../ex4/README.md)
+Continue to part- [Exercise 4 - Comparison Page ](../exercise-4/README.md)
