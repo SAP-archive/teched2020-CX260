@@ -82,7 +82,7 @@ If you like to verify your code, you can compare it to the [`comparison-selectio
 
 ## Summary
 
-You've now implemented the persisted state for the selection service. We're now ready to implement the actual comparison table.
+You've now implemented the persisted state for the selection service. We're now ready to add the comparison page that we'll link up to the product detail page.
 
 💡 If you haven't done already, it's a good time again to commit your changes.
 

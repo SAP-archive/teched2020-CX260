@@ -1,0 +1,10 @@
+# ImpEx script that adds a content page to the content catalog.
+# The page can be used for the product comparison page.
+
+# macros
+$contentCatalog=electronics-spaContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Online])[default=$contentCatalog:Online]
+
+# page
+INSERT_UPDATE ContentPage;uid[unique=true];name;masterTemplate(uid,$contentCV);label;title[lang=en];defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false'];$contentCV[unique=true];
+;ProductComparisonPage;Product Comparison Page;ContentPage1Template;/comparison;Comparison
