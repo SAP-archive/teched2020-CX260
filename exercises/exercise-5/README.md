@@ -1,4 +1,4 @@
-# Exercise 5 - Product Comparison Table (part 1)
+# Exercise 5 - Product Comparison Table
 
 In this exercise, you will add the basic comparison table component to the comparison page.
 
@@ -77,10 +77,10 @@ Now that you've added the mapping, you should no longer see the warning. Instead
 
 ## Summary
 
-You've now added a new component to the comparison page. We're now ready to implement more comparison table logic, part 2.
+You've now added a new component to the comparison page. We're now ready to implement more comparison table header.
 
 💡 If you haven't done already, it's a good time again to commit your changes.
 
 ---
 
-Continue to [Exercise 6 - Comparison Table Component View ](../exercise-6/README.md)
+Continue to [Exercise 6 - Product Comparison Header ](../exercise-6/README.md)

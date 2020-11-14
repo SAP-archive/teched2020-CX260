@@ -3,9 +3,7 @@
 In this exercise, you will implement the header of comparison table. The header contains some
 high-level product information, such as the main image, name and price.
 
-## Exercise 6.1 Create comparison header component
-
-### Step 1: Code scaffolding
+## Exercise 6.1 Code scaffolding
 
 Let's start generating the header component in it's own module:
 
@@ -22,7 +20,7 @@ We're going to use a number of Spartacus components in the header module, which 
 
 The modules export various components and directives that we leverage in the header component.
 
-### Step 2: Implement component logic
+## Exercise 6.2: Implement component logic
 
 We can now implement our component logic. We delegate most of the logic to the `ProductComparisonService`. The implementation of this service can be found [in the source](./src/product-comparison/services/product-comparison.service.ts), given that's a fair amount of code, we're not going over it line by line.
 
@@ -40,7 +38,7 @@ export class ComparisonHeaderComponent {
 }
 ```
 
-### Step 3: Implement view logic
+## Exercise 6.3: Implement view logic
 
 We're going to observe the list of selected products (`products$`) and render the product image, name and price. If there's no single product selected, we render an alternative text (templateRef `#empty`).
 
@@ -89,7 +87,7 @@ cx-media {
 }
 ```
 
-### Step 4: Add header
+## Exercise 6.4: Add header
 
 To import the header component we must do 2 things:
 

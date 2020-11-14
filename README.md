@@ -31,9 +31,14 @@ There are also a few other [recommendations](./prerequisites.md#recommendations)
 - [Exercise 4 - Comparison Page](exercises/exercise-4/README.md)
   - Exercise 4.1 Setup the CMS Comparison Content Page
   - Exercise 4.2 Add a link to the comparison page
-- [Exercise 5 - Product Comparison Table (part 1)](exercises/exercise-5/README.md)
+- [Exercise 5 - Product Comparison Table](exercises/exercise-5/README.md)
   - Exercise 5.1 Scaffolding comparison table
   - Exercise 5.2 Add static CMS content
+- [Exercise 6 - Product Comparison Header](exercises/exercise-6/README.md)
+  - Exercise 6.1 Code scaffolding
+  - Exercise 6.2 Implement component logic
+  - Exercise 6.3 Implement view logic
+  - Exercise 6.4 Add header
 
 **IMPORTANT**
 
