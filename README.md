@@ -33,11 +33,9 @@ Provide the exercise content here directly in README.md using [markdown](https:/
 - [Exercise 4 - Comparison Page](exercises/exercise-4/README.md)
   - Exercise 4.1 Setup the CMS Comparison Content Page
   - Exercise 4.2 Add a link to the comparison page
-
-## Bonus exercises:
-
-Localisation
-lazy loading
+- [Exercise 5 - Product Comparison Table (part 1)](exercises/exercise-5/README.md)
+  - Exercise 5.1 Scaffolding comparison table
+  - Exercise 5.2 Add static CMS content
 
 **IMPORTANT**
 
