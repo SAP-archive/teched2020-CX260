@@ -78,6 +78,8 @@ export class ComparisonSelectionService implements OnDestroy {
 }
 ```
 
+If you like to verify your code, you can compare it to the [`comparison-selection.service.ts` provide in the src folder](./src/product-comparison/services/comparison-selection.service.ts).
+
 ## Summary
 
 You've now implemented the persisted state for the selection service. We're now ready to implement the actual comparison table.
