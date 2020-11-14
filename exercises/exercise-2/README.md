@@ -183,4 +183,4 @@ You've now generated an angular module, component and selector and added it to t
 
 ---
 
-Continue to part- [Exercise 3 - Implement selection service](../exercise-3/README.md)
+Continue to [Exercise 3 - Implement selection service](../exercise-3/README.md)

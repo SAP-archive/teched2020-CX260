@@ -50,4 +50,4 @@ You've now implemented the link to the (empty) comparison page. We're now ready 
 
 ---
 
-Continue to part- [Exercise 5 - Comparison Table Component ](../exercise-5/README.md)
+Continue to [Exercise 5 - Comparison Table Component ](../exercise-5/README.md)
