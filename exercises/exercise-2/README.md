@@ -83,8 +83,8 @@ You can already add the interface that you need in the following exercise:
 
 ```ts
 export interface SelectionState {
-  code: string;
-  selected: boolean;
+  code: string
+  selected: boolean
 }
 ```
 
@@ -97,18 +97,18 @@ That being said, we haven't added the new component anywhere in the UI, which is
 Spartacus provides an utility function (`provideOutlet`) that you can leverage to provide angular components to existing spartacus components. The following code snippets shows how you can add the `ComparisonSelectorComponent` next to the add-to-cart button:
 
 ```ts
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core'
 import {
   OutletPosition,
   OutletPosition,
   provideOutlet,
-} from "@spartacus/storefront";
-import { ComparisonSelectorComponent } from "./comparison-selector/comparison-selector.component";
+} from '@spartacus/storefront'
+import { ComparisonSelectorComponent } from './comparison-selector/comparison-selector.component'
 
 @NgModule({
   providers: [
     provideOutlet({
-      id: "ProductAddToCartComponent",
+      id: 'ProductAddToCartComponent',
       component: ComparisonSelectorComponent,
       position: OutletPosition.AFTER,
     }),
@@ -143,7 +143,7 @@ To get hold of the selection state for the current product, we add a property th
 ```ts
 state$ = this.currentProduct
   .getProduct()
-  .pipe(switchMap((product) => this.comparisonSelection.get(product.code)));
+  .pipe(switchMap((product) => this.comparisonSelection.get(product.code)))
 ```
 
 The above code will be invalid until you've implemented the `comparisonSelection`. We'll do this in the follow up exercise, but you can already unblock yourself by implementing a skeleton `get` method in the service.
@@ -172,7 +172,6 @@ A common pattern to select a product for the product comparison list, is to tick
     />
     <span>compare</span>
   </label>
-  <a *ngIf="state.selected" routerLink="/comparison"> Open comparison </a>
 </ng-container>
 ```
 

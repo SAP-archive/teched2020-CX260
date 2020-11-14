@@ -73,7 +73,7 @@ It is important to clean up subscriptions when the service is destroyed. You can
 ```ts
 export class ComparisonSelectionService implements OnDestroy {
   ngOnDestroy(): void {
-    this.persistSubscription.unsubscribe();
+    this.persistSubscription.unsubscribe()
   }
 }
 ```
