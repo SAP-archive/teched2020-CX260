@@ -30,6 +30,9 @@ Provide the exercise content here directly in README.md using [markdown](https:/
 - [Exercise 3 - Implement Persistent Selection State](exercises/exercise-3/README.md)
   - Exercise 3.1 Toggle selection
   - Exercise 3.2 Persist selection
+- [Exercise 4 - Comparison Page](exercises/exercise-4/README.md)
+  - Exercise 4.1 Setup the CMS Comparison Content Page
+  - Exercise 4.2 Add a link to the comparison page
 
 ## Bonus exercises:
 
