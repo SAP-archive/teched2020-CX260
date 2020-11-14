@@ -8,15 +8,13 @@ This repository contains the material for the SAP TechEd 2020 session called CX2
 
 The exercises in this session shows you how to develop a PWA storefront using the Spartacus libraries, and provides an introduction to the fundamentals of Spartacus. You'll develop your own Spartacus storefront, and add some customizations on top of the standards components.
 
-## You should come prepared!
+## Come prepared!
 
 For this session you need a local development system. Make sure you go through [the prerequisites](./prerequisites.md).
 
 There are also a few other [recommendations](./prerequisites.md#recommendations) provided.
 
 ## Exercises
-
-Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
 
 - [Exercise 1 – Setup Spartacus locally](exercises/exercise-1/README.md)
   - Exercise 1.1 Confirm prerequisites

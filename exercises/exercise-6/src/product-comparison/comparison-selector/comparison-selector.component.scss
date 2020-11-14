@@ -1,0 +1,15 @@
+:host {
+  padding: 10px 20px;
+  display: flex;
+}
+label {
+  display: flex;
+  margin-inline-end: 10px;
+  cursor: pointer;
+  input {
+    all: revert;
+    width: 20px;
+    height: 20px;
+    margin-inline-end: 10px;
+  }
+}

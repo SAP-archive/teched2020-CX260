@@ -1,0 +1,20 @@
+<thead>
+  <tr *ngIf="products$ | async as productList; else empty">
+    <th></th>
+    <th *ngFor="let product of productList">
+      <button (click)="remove(product.code)" class="close">
+        <cx-icon type="CLOSE"></cx-icon>
+      </button>
+      <a [routerLink]="{ cxRoute: 'product', params: product } | cxUrl">
+        <cx-media [container]="product.images?.PRIMARY"></cx-media>
+        <div>{{ product.name }}</div>
+        <div>{{ product.price.formattedValue }}</div>
+      </a>
+    </th>
+  </tr>
+  <ng-template #empty>
+    <tr>
+      <td>No products to compare.</td>
+    </tr>
+  </ng-template>
+</thead>
