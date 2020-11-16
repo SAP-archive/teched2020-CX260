@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Product, ProductScope, ProductService } from '@spartacus/core'
 import { combineLatest, Observable, of } from 'rxjs'
-import { filter, switchMap } from 'rxjs/operators'
+import { filter, startWith, switchMap } from 'rxjs/operators'
 import { ComparisonSelectionService } from './comparison-selection.service'
 
 @Injectable({
@@ -21,7 +21,8 @@ export class ProductComparisonService {
         return codes.length > 0
           ? combineLatest(codes.map((code) => this.getProduct(code, scope)))
           : of(null)
-      })
+      }),
+      startWith([])
     )
   }
 

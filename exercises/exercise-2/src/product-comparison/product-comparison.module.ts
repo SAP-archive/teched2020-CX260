@@ -1,15 +1,15 @@
-import { NgModule } from "@angular/core";
-import { OutletPosition } from "@spartacus/storefront";
-import { provideOutlet } from "../utils/utils";
-import { ComparisonSelectorComponent } from "./comparison-selector/comparison-selector.component";
-import { ComparisonSelectorModule } from "./comparison-selector/comparison-selector.module";
+import { NgModule } from '@angular/core'
+import { OutletPosition } from '@spartacus/storefront'
+import { provideOutlet } from '../utils/utils'
+import { ComparisonSelectionComponent } from './comparison-selection/comparison-selection.component'
+import { ComparisonSelectionModule } from './comparison-selection/comparison-selection.module'
 
 @NgModule({
-  imports: [ComparisonSelectorModule],
+  imports: [ComparisonSelectionModule],
   providers: [
     provideOutlet({
-      id: "ProductAddToCartComponent",
-      component: ComparisonSelectorComponent,
+      id: 'ProductAddToCartComponent',
+      component: ComparisonSelectionComponent,
       position: OutletPosition.AFTER,
     }),
   ],

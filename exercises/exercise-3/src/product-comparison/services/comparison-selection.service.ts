@@ -10,7 +10,7 @@ import { SelectionState } from '../model'
 export class ComparisonSelectionService implements OnDestroy {
   constructor(private statePersistenceService: StatePersistenceService) {}
 
-  private readonly selection$ = new BehaviorSubject([])
+  readonly selection$ = new BehaviorSubject([])
 
   private persistSubscription = this.statePersistenceService.syncWithStorage({
     key: 'comparison-products',

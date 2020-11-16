@@ -1,25 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { ComparisonSelectionComponent } from './comparison-selection.component'
 
-import { ComparisonSelectorComponent } from './comparison-selector.component';
-
-describe('ComparisonSelectorComponent', () => {
-  let component: ComparisonSelectorComponent;
-  let fixture: ComponentFixture<ComparisonSelectorComponent>;
+describe('ComparisonSelectionComponent', () => {
+  let component: ComparisonSelectionComponent
+  let fixture: ComponentFixture<ComparisonSelectionComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ComparisonSelectorComponent ]
-    })
-    .compileComponents();
-  });
+      declarations: [ComparisonSelectionComponent],
+    }).compileComponents()
+  })
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ComparisonSelectorComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(ComparisonSelectionComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

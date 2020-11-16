@@ -1,4 +1,4 @@
-# Exercise 2 - Implement Product Comparison Selector
+# Exercise 2 - Implement Product Comparison Selection
 
 In this exercise, you will implement a button that can be used to select a product for the comparison. The button will be added to the Product Detail Page (PDP).
 
@@ -37,29 +37,29 @@ You should now manually add the newly created module in the import list of the a
 export class AppModule { }
 ```
 
-### Step 2: Product Comparison Selector
+### Step 2: Product Comparison Selection
 
-You can generate the comparison selector module in a similar fashion:
-
-```
-ng g m product-comparison/comparison-selector
-```
-
-And you should now manually add the `ComparisonSelectorModule` to the list of imports of the `ProductComparisonModule` that you generated in step 1.
-
-Now that you have a feature module for the selector, you can generate the selector component in a similar fashion:
+You can generate the comparison selection module in a similar fashion:
 
 ```
-ng g c product-comparison/comparison-selector
+ng g m product-comparison/comparison-selection
+```
+
+And you should now manually add the `ComparisonSelectionModule` to the list of imports of the `ProductComparisonModule` that you generated in step 1.
+
+Now that you have a feature module for the selection, you can generate the selection component in a similar fashion:
+
+```
+ng g c product-comparison/comparison-selection
 ```
 
 (This is short for `ng generate component`)
 
-The generated _component_ is actually automatically declared in the list of components of the module `ComparisonSelectorModule`.
+The generated _component_ is actually automatically declared in the list of components of the module `ComparisonSelectionModule`.
 
 ### Step 3: Selection Service
 
-We will delegate logic to services, and for the selector component we will now generate a service up front:
+We will delegate logic to services, and for the selection component we will now generate a service up front:
 
 ```
 ng g s services/selection
@@ -92,9 +92,9 @@ export interface SelectionState {
 
 You might have noticed that you the dev server picks up changes that you do to the included code, and rebuilds the application on the fly. Moreover, the browser will automatically refresh so that changes are incorporated quickly.
 
-That being said, we haven't added the new component anywhere in the UI, which is why you won't see any changes so far. There are various approaches to do so, in this case we're like to do as little as possible. We'll add the generated `ComparisonSelectorComponent` as-is to the PDP, specifically under the add-to-cart button.
+That being said, we haven't added the new component anywhere in the UI, which is why you won't see any changes so far. There are various approaches to do so, in this case we're like to do as little as possible. We'll add the generated `ComparisonSelectionComponent` as-is to the PDP, specifically under the add-to-cart button.
 
-Spartacus provides an utility function (`provideOutlet`) that you can leverage to provide angular components to existing spartacus components. The following code snippets shows how you can add the `ComparisonSelectorComponent` next to the add-to-cart button:
+Spartacus provides an utility function (`provideOutlet`) that you can leverage to provide angular components to existing spartacus components. The following code snippets shows how you can add the `ComparisonSelectionComponent` next to the add-to-cart button:
 
 ```ts
 import { NgModule } from '@angular/core'
@@ -103,13 +103,13 @@ import {
   OutletPosition,
   provideOutlet,
 } from '@spartacus/storefront'
-import { ComparisonSelectorComponent } from './comparison-selector/comparison-selector.component'
+import { ComparisonSelectionComponent } from './comparison-selection/comparison-selection.component'
 
 @NgModule({
   providers: [
     provideOutlet({
       id: 'ProductAddToCartComponent',
-      component: ComparisonSelectorComponent,
+      component: ComparisonSelectionComponent,
       position: OutletPosition.AFTER,
     }),
   ],
@@ -117,13 +117,13 @@ import { ComparisonSelectorComponent } from './comparison-selector/comparison-se
 export class ProductComparisonModule {}
 ```
 
-This function provides the `ComparisonSelectorComponent` component to the existing Spartacus UI, _after_ the `ProductAddToCartComponent` on the PDP.
+This function provides the `ComparisonSelectionComponent` component to the existing Spartacus UI, _after_ the `ProductAddToCartComponent` on the PDP.
 
-When you run this code, you should be able to see the `ComparisonSelectorComponent` in the PDP UI. Please note that we haven't implemented this component yet, which is why you will see the standard "comparison-selector works!" template content.
+When you run this code, you should be able to see the `ComparisonSelectionComponent` in the PDP UI. Please note that we haven't implemented this component yet, which is why you will see the standard "comparison-selection works!" template content.
 
-## Exercise 2.3 Selector implementation
+## Exercise 2.3 Selection implementation
 
-We like to bring in a checkbox selector that we can use to add the product to the comparison list. We like to keep the selection state in the session, but it could also be beneficial to maintain the selection over sessions. This is very useful during development too, as we won't need to manual select the products while we're building the UI.
+We like to bring in a checkbox selection that we can use to add the product to the comparison list. We like to keep the selection state in the session, but it could also be beneficial to maintain the selection over sessions. This is very useful during development too, as we won't need to manual select the products while we're building the UI.
 
 ### Step 1: Controller logic
 
@@ -177,7 +177,7 @@ A common pattern to select a product for the product comparison list, is to tick
 
 ## Summary
 
-You've now generated an angular module, component and selector and added it to the standard Spartacus UI. You can already see the UI of Spartacus being effected by this change, but we will ad the actual selection logic in the next exercise.
+You've now generated an angular module, component and selection and added it to the standard Spartacus UI. You can already see the UI of Spartacus being effected by this change, but we will ad the actual selection logic in the next exercise.
 
 💡 If you haven't done already, it's a good time again to commit your changes.
 

@@ -19,7 +19,7 @@ To make the newly created comparison table component part of you application, we
 
 ```ts
 @NgModule({
-  imports: [ComparisonSelectorModule, ComparisonTableModule],
+  imports: [ComparisonSelectionModule, ComparisonTableModule],
   providers: [
       ...
   ],

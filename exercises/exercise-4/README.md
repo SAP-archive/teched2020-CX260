@@ -17,9 +17,9 @@ You are now able to visit the comparison page, but it will be empty. We have not
 
 ## Exercise 4.2 Add a link to the comparison page
 
-We will not add a link in the product selector to allow direction navigation to the comparison page when the product is selected.
+We will not add a link in the product selection to allow direction navigation to the comparison page when the product is selected.
 
-We'll add the link to the `comparison-selector.component.html` file that we created in exercise 2. We'd add the link only if the product is selected:
+We'll add the link to the `comparison-selection.component.html` file that we created in exercise 2. We'd add the link only if the product is selected:
 
 ```html
 <ng-container *ngIf="state$ | async as state">
@@ -28,14 +28,14 @@ We'll add the link to the `comparison-selector.component.html` file that we crea
 </ng-container>
 ```
 
-To ensure that the link is using the Angular router, you must import the `RouterModule` in the `ComparisonSelectorModule`:
+To ensure that the link is using the Angular router, you must import the `RouterModule` in the `ComparisonSelectionModule`:
 
 ```ts
 @NgModule({
   imports: [CommonModule, RouterModule],
-  declarations: [ComparisonSelectorComponent],
+  declarations: [ComparisonSelectionComponent],
 })
-export class ComparisonSelectorModule {}
+export class ComparisonSelectionModule {}
 ```
 
 Once you've added those pieces, you should be able link to the page in the UI:

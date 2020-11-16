@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { ComparisonSelectorComponent } from './comparison-selector.component';
+import { CommonModule } from '@angular/common'
+import { NgModule } from '@angular/core'
+import { RouterModule } from '@angular/router'
+import { ComparisonSelectionComponent } from './comparison-selection.component'
 
 @NgModule({
   imports: [CommonModule, RouterModule],
-  declarations: [ComparisonSelectorComponent],
+  declarations: [ComparisonSelectionComponent],
 })
-export class ComparisonSelectorModule {}
+export class ComparisonSelectionModule {}

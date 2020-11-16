@@ -1,17 +1,17 @@
-import { NgModule } from '@angular/core';
-import { OutletPosition } from '@spartacus/storefront';
-import { provideCmsStructure } from '../utils/cms-structure.util';
-import { provideOutlet } from '../utils/utils';
-import { ComparisonSelectorComponent } from './comparison-selector/comparison-selector.component';
-import { ComparisonSelectorModule } from './comparison-selector/comparison-selector.module';
-import { ComparisonTableModule } from './comparison-table/comparison-table.module';
+import { NgModule } from '@angular/core'
+import { OutletPosition } from '@spartacus/storefront'
+import { provideCmsStructure } from '../utils/cms-structure.util'
+import { provideOutlet } from '../utils/utils'
+import { ComparisonSelectionComponent } from './comparison-selection/comparison-selection.component'
+import { ComparisonSelectionModule } from './comparison-selection/comparison-selection.module'
+import { ComparisonTableModule } from './comparison-table/comparison-table.module'
 
 @NgModule({
-  imports: [ComparisonSelectorModule, ComparisonTableModule],
+  imports: [ComparisonSelectionModule, ComparisonTableModule],
   providers: [
     provideOutlet({
       id: 'ProductAddToCartComponent',
-      component: ComparisonSelectorComponent,
+      component: ComparisonSelectionComponent,
       position: OutletPosition.AFTER,
     }),
 
