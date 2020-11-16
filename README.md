@@ -39,6 +39,11 @@ There are also a few other [recommendations](./prerequisites.md#recommendations)
   - Exercise 6.2 Implement component logic
   - Exercise 6.3 Implement view logic
   - Exercise 6.4 Add header
+- [Exercise 7 - Comparison Features](exercises/exercise-7/README.md)
+  - Exercise 7.1 Code scaffolding and importing
+  - Exercise 7.2 ComparisonFeaturesService
+  - Exercise 7.3 Implement comparison component (basic)
+  - Exercise 7.4 Implement comparison component (advanced)
 
 **IMPORTANT**
 
