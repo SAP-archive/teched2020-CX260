@@ -2,7 +2,7 @@
 
 In this exercise, you will implement a button that can be used to select a product for the comparison. The button will be added to the Product Detail Page (PDP).
 
-We're going to gradually generate and build code in this exercise, but if you're in a hurry, you can copy the version you should end up with in the src folder. You can copy the [content of the src folder](./src/product-comparison/) in your local "app" folder.
+We're going to gradually generate and build code in this exercise.
 
 ## Exercise 2.1 Generate files with the Angular CLI
 
@@ -84,7 +84,7 @@ You might have noticed that you the dev server picks up changes that you do to t
 
 That being said, we haven't added the new component anywhere in the UI, which is why you won't see any changes so far. There are various approaches to do so, in this case we're like to do as little as possible. We'll add the generated `ComparisonSelectionComponent` as-is to the PDP, specifically under the add-to-cart button.
 
-Spartacus provides an utility function since version 3.0 (`provideOutlet`) that you can leverage to provide angular components to existing spartacus components. The following code snippets shows how you can add the `ComparisonSelectionComponent` next to the add-to-cart button:
+Spartacus provides an utility function since version 3.0 (`provideOutlet`) that you can leverage to provide angular components to existing spartacus components (if you're on <3.0 version, you can use the utility function that we've provided in the sample). The following code snippets shows how you can add the `ComparisonSelectionComponent` next to the add-to-cart button. You also must import the `ComparisonSelectionModule` to ensure that all dependencies of the component will be available at runtime.
 
 ```ts
 import { NgModule } from '@angular/core'
@@ -94,8 +94,10 @@ import {
   provideOutlet,
 } from '@spartacus/storefront'
 import { ComparisonSelectionComponent } from './comparison-selection/comparison-selection.component'
+import { ComparisonSelectionModule } from './comparison-selection/comparison-selection.module'
 
 @NgModule({
+  imports: [ComparisonSelectionModule],
   providers: [
     provideOutlet({
       id: 'ProductAddToCartComponent',
@@ -121,7 +123,7 @@ To control the selection, we delegate the logic to the `ComparisonSelectionServi
 
 We'll add this service to the constructor, we also add the `CurrentProductService` (from `@spartacus/storefront`) to get hold of the current product code, that we like to select. Our constructor will look like this:
 
-```t
+```ts
 constructor(
     private currentProduct: CurrentProductService,
     private comparisonSelection: ComparisonSelectionService
@@ -136,9 +138,15 @@ state$ = this.currentProduct
   .pipe(switchMap((product) => this.comparisonSelection.get(product.code)))
 ```
 
-The above code will be invalid until you've implemented the `comparisonSelection`. We'll do this in the follow up exercise, but you can already unblock yourself by implementing a skeleton `get` method in the service.
+The above code will be invalid until you've implemented the `comparisonSelection`. We'll do this in the follow up exercise, but you can already unblock yourself by implementing a skeleton `get` method in the service:
 
-Next, we're adding add a `toggle` method that can toggle the selection for comparison of the current product. We delegate the actual logic to the selection service.
+```ts
+get(code: string): Observable<SelectionState> {
+  return;
+}
+```
+
+Next, we're adding add a `toggle` method in the controller that toggles the selection of the current product. We delegate the actual logic to the selection service to the service
 
 ```ts
 toggle(state: SelectionState): void {
@@ -147,6 +155,10 @@ toggle(state: SelectionState): void {
 ```
 
 Similar to the missing `get` method, you will need a skeleton `toggle` method in the `ComparisonSelection` service to keep you code valid.
+
+```ts
+toggle(code: string): void {}
+```
 
 ### Step 2: View Logic
 
@@ -165,9 +177,31 @@ A common pattern to select a product for the product comparison list, is to tick
 </ng-container>
 ```
 
+We're finally adding a few style rules to improve the styling a bit, you add the following to the component styles:
+
+```scss
+:host {
+  padding: 10px 20px;
+  display: flex;
+}
+label {
+  display: flex;
+  margin-inline-end: 10px;
+  cursor: pointer;
+  input {
+    all: revert;
+    width: 20px;
+    height: 20px;
+    margin-inline-end: 10px;
+  }
+}
+```
+
 ## Summary
 
-You've now generated an angular module, component and selection and added it to the standard Spartacus UI. You can already see the UI of Spartacus being effected by this change, but we will ad the actual selection logic in the next exercise.
+You've now generated an angular module, component and selection and added it to the standard Spartacus UI. You can already see the UI of Spartacus being effected by this change, but we will add the actual selection logic in the next exercise.
+
+If you like to validate your implementation, you can find the actual implementation for this exercise in [dedicated branch for exercise 2](https://github.com/SAP-samples/teched2020-CX260/tree/exercices/2-product-comparison-selection-component/sample-storefront/src/app).
 
 💡 If you haven't done already, it's a good time again to commit your changes.
 
