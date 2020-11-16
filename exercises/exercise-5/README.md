@@ -12,7 +12,7 @@ ng g m product-comparison/comparison-table
 # generate comparison table component
 ng g c product-comparison/comparison-table
 # generate comparison service
-ng g s product-comparison/services/product-comparison
+ng g s product-comparison/product-comparison
 ```
 
 To make the newly created comparison table component part of you application, we import it into the `ProductComparisonModule` that we created in exercise 2.
@@ -78,6 +78,8 @@ Now that you've added the mapping, you should no longer see the warning. Instead
 ## Summary
 
 You've now added a new component to the comparison page. We're now ready to implement more comparison table header.
+
+If you like to validate your implementation, you can find the (actual implementation of the component]https://github.com/SAP-samples/teched2020-CX260/tree/exercises/5-comparison-table-component/sample-storefront/src/app/product-comparison) in the sample code.
 
 💡 If you haven't done already, it's a good time again to commit your changes.
 
