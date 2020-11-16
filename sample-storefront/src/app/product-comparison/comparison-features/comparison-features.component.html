@@ -1,0 +1,33 @@
+<ng-container *ngIf="products$ | async as products">
+  <button
+    *ngIf="products.length > 1"
+    (click)="hideEqual = !hideEqual"
+    [innerText]="hideEqual ? 'Show all features' : 'Show differences only'"
+  ></button>
+  <tbody
+    *ngFor="let category of list$ | async"
+    [class.is-equal]="hasComparableProperties(category)"
+  >
+    <tr>
+      <th [attr.colSpan]="products.length + 1">{{ category.name }}</th>
+    </tr>
+    <tr
+      *ngFor="let property of category.properties"
+      [class.is-equal]="property.isEqual"
+    >
+      <td>{{ property.name }}</td>
+      <td *ngFor="let product of products">
+        <ng-container *ngIf="property.values.get(product.code) as value">
+          <ng-container *ngIf="property.values.get(product.code) as value">
+            <cx-icon
+              *ngIf="hasBoolValue(property, value) as icon; else text"
+              [type]="icon"
+              [class.truthy]="value === 'true'"
+            ></cx-icon>
+            <ng-template #text>{{ value || "–" }}</ng-template>
+          </ng-container>
+        </ng-container>
+      </td>
+    </tr>
+  </tbody>
+</ng-container>

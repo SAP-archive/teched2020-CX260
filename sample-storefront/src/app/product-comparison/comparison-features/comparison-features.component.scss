@@ -1,0 +1,56 @@
+:host {
+  // ensure to not let the host element influence the table flow
+  display: contents;
+  &.hide-equal .is-equal {
+    display: none;
+  }
+}
+
+tbody {
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: var(--cx-color-background);
+  }
+  tr {
+    border-bottom: solid 1px var(--cx-color-light);
+  }
+}
+
+tr {
+  // keep the text in the first column together
+  th,
+  td {
+    padding: 10px;
+    &:not(:first-child) {
+      width: 200px;
+    }
+    &:first-child {
+      white-space: nowrap;
+    }
+  }
+}
+
+tbody,
+tr {
+  &.is-equal {
+    color: lightgray;
+  }
+}
+
+cx-icon {
+  &.truthy {
+    color: var(--cx-color-success);
+  }
+  &:not(.truthy) {
+    color: var(--cx-color-danger);
+  }
+}
+
+button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--cx-color-secondary);
+  color: var(--cx-color-background);
+  padding: 10px 20px;
+}
