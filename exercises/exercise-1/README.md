@@ -5,8 +5,8 @@ In this exercise, you will setup Spartacus on your local system.
 **TLTR:** The exercise can be done with a few quick commands. If you're comfortable with Angular development, you can pass this exercise using the following commands and you'd be up and running within a minute.
 
 ```
-ng new my-storefront --routing=false --style=scss
-cd my-storefront
+ng new sample-storefront --routing=false --style=scss
+cd sample-storefront
 ng add @spartacus/schematics@next \
   --baseUrl=https://spartacus-demo.eastus.cloudapp.azure.com:8443 \
   --occPrefix=/occ/v2 --baseSite=electronics-spa
@@ -31,17 +31,17 @@ Ensure that you have the prerequisites in place by the validating the following 
 Spartacus is distributed as a set of npm packages, that you can add to an angular application. Creating an Angular application is easily done with the [Angular CLI](https://cli.angular.io/). You can run the following command in a terminal to generate a new Angular application
 
 ```shell
-ng new storefront --routing=false --style=scss
+ng new sample-storefront --routing=false --style=scss
 ```
 
-This creates a new Angular application, called "storefront", without routing and using the SCSS style syntax.
+This creates a new Angular application, called "sample-storefront", without routing and using the SCSS style syntax.
 
-You can run the newly created application by executing `yarn start` in the terminal. You should run this inside the newly created application folder, so you probably need to run `cd storefront` upfront.
+You can run the newly created application by executing `yarn start` in the terminal. You should run this inside the newly created application folder, so you probably need to run `cd sample-storefront` upfront.
 The dev server starts by default on port 4200; You can open the application, using: http://localhost:4200.
 
 ---
 
-**Note**: The newly generated application comes with a clean git repo, which allows you to track changes while you're building out the exercises in this workshop. It is recommended to commit your changes after each exercise, so that you can roll back easily as well as clearly see what you've done.
+**Note**: The newly generated application initializes a git repo, which allows you to track changes while you're building out the exercises in this workshop. It is recommended to commit your changes after each exercise, so that you can roll back easily as well as clearly see what you've done.
 
 ---
 
@@ -54,7 +54,7 @@ To simplify the default configuration of spartacus even more, we're adding few m
 ```shell
 ng add @spartacus/schematics@next \
   --baseUrl=https://spartacus-demo.eastus.cloudapp.azure.com:8443 \
-  --occPrefix=/occ/v2 --baseSite=electronics-spa
+  --occPrefix=/occ/v2/ --baseSite=electronics-spa
 ```
 
 **Note**: the backslash is only used to make the command better readable. It will be ignored when you paste it in you terminal.
@@ -72,10 +72,10 @@ You might want to commit your changes to the local git repo so that you keep tra
 You can run your local Spartacus application, using the following command:
 
 ```shell
-yarn start
+ng serve
 ```
 
-This command will run the angular dev server, using `ng serve` under the hood.
+This command will run the angular dev server
 
 Once the application is started, you can launch it in the browser: [http//:localhost:4200](http//:localhost:4200).
 
