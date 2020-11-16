@@ -22,7 +22,7 @@ The modules export various components and directives that we leverage in the hea
 
 ## Exercise 6.2 Implement component logic
 
-We can now implement our component logic. We delegate most of the logic to the `ProductComparisonService`. The implementation of this service can be found [in the sample]. Given that's a fair amount of code, we're not going over it line by line. We've however added some inline documentation for you to understand what's going on.
+We can now implement our component logic. We delegate most of the logic to the `ProductComparisonService`. The [implementation of this service](https://github.com/SAP-samples/teched2020-CX260/blob/exercises/6-comparison-header/sample-storefront/src/app/product-comparison/product-comparison.service.ts) can be found in the sample code. Given that's a fair amount of code, we're not going over it line by line. We've however added some inline documentation for you to understand what's going on.
 
 Let's leverage the `ProductComparisonService` in the new header component. We bring in the selected products to the header component and reuse the toggle method that we've added in exercise 3.1.
 
