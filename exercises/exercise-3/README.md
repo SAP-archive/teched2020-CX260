@@ -22,7 +22,7 @@ We need to operate on the reactive stream value. The `BehaviorSubject` provides 
 
 ```ts
 toggle(code: string): void {
-    const selection: string[] = this.selection.value;
+    const selection: string[] = this.selection$.value;
 
     const active = selection.indexOf(code);
     if (active > -1) {
@@ -30,7 +30,7 @@ toggle(code: string): void {
     } else {
         selection.push(code);
     }
-    this.selection.next(selection);
+    this.selection$.next(selection);
 }
 ```
 
@@ -38,7 +38,9 @@ Now that we have a selection, we can expose the selected state for a given produ
 
 ```ts
 get(code: string): Observable<SelectionState> {
-    return this.has(code).pipe(map((selected) => ({ code, selected })));
+    return this.selection$.pipe(
+      map((state) => ({ code, selected: state.includes(code) }))
+    );
 }
 ```
 
@@ -76,9 +78,13 @@ export class ComparisonSelectionService implements OnDestroy {
 }
 ```
 
+You can validate your solution by looking at the local storage in your devtools. You should see a key in localStorage `spartacus⚿⚿comparison-products` that holds the selection of product codes.
+
 ## Summary
 
 You've now implemented the persisted state for the selection service. We're now ready to add the comparison page that we'll link up to the product detail page.
+
+If you like to validate your implementation, you can find the (actual implementation of the selection service](https://github.com/SAP-samples/teched2020-CX260/blob/exercises/3-comparison-selection-service/sample-storefront/src/app/product-comparison/comparison-selection/comparison-selection.service.ts).
 
 💡 If you haven't done already, it's a good time again to commit your changes.
 
