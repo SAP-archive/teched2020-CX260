@@ -22,7 +22,7 @@ The modules export various components and directives that we leverage in the hea
 
 ## Exercise 6.2 Implement component logic
 
-We can now implement our component logic. We delegate most of the logic to the `ProductComparisonService`. The implementation of this service can be found source, given that's a fair amount of code, we're not going over it line by line. We've however added some inline documentation for you to understand what's going on.
+We can now implement our component logic. We delegate most of the logic to the `ProductComparisonService`. The implementation of this service can be found [in the sample]. Given that's a fair amount of code, we're not going over it line by line. We've however added some inline documentation for you to understand what's going on.
 
 Let's leverage the `ProductComparisonService` in the new header component. We bring in the selected products to the header component and reuse the toggle method that we've added in exercise 3.1.
 
@@ -43,7 +43,7 @@ export class ComparisonHeaderComponent {
 We're going to observe the list of selected products (`products$`) and render the product image, name and price. If there's no single product selected, we render an alternative text (templateRef `#empty`).
 
 ```html
-<ng-container *ngIf="products$ | async as products">
+<ng-container *ngIf="products$ | async as products;else empty">
   <thead>
     <th></th>
     <th *ngFor="let product of products">
@@ -60,6 +60,7 @@ We're going to observe the list of selected products (`products$`) and render th
     </th>
   </thead>
 </ng-container>
+<ng-template #empty> No products to compare.</ng-template>
 ```
 
 There might a few new gotchas for you with this implementation
@@ -104,13 +105,12 @@ Now that we've implemented the header logic, we must add it to the comparison ta
    export class ComparisonHeaderModule {}
    ```
 
-2. Add the `app-comparison-header` to the `ComparisonTableComponent`:
+2. Import the `ComparisonHeaderModule` and add the `app-comparison-header` to the `ComparisonTableComponent`:
 
    ```html
-   <table *ngIf="products$ | async as products; else empty">
+   <table>
      <app-comparison-header></app-comparison-header>
    </table>
-   <ng-template #empty> No products to compare. </ng-template>
    ```
 
 ## Summary
@@ -120,6 +120,8 @@ Now that you've added the header to the `ComparisonTableComponent`, you should b
 ![](./images/comparison-header.png)
 
 We will implement more comparison attributes in the next exercise.
+
+If you like to validate your implementation, you can find the (actual implementation of the header component]https://github.com/SAP-samples/teched2020-CX260/tree/exercises/6-comparison-header/sample-storefront/src/app/product-comparison) in the sample code.
 
 💡 If you haven't done already, it's a good time again to commit your changes.
 
