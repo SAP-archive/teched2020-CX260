@@ -2,8 +2,6 @@
 
 In this exercise, you will implement the selection service. We've generated the `ComparisonSelectionService` in the previous example, but we need to implement the logic.
 
-We're going to gradually generate and build code in this exercise, but if you like to skip tis exercise or need more detailed help, you can find the final version in "src/services/comparison-selection.service.ts" file, next to this readme file.
-
 ## Exercise 3.1 Toggle selection
 
 We'll start implementing the selection state in the service. The selection state represents the
@@ -12,13 +10,13 @@ in memory state of the product comparison selection that remains persistent in m
 There are many ways to persist the state, and there's nothing Spartacus specific to this. We use a local _BehaviorSubject_ to store the selection. We use a reactive pattern here, so that we can _observe_ any changes and react on this in the UI.
 
 ```ts
-private readonly selection$ = new BehaviorSubject([]);
+readonly selection$ = new BehaviorSubject([]);
 ```
 
 Next, we're implementing the toggle method that we created in exercise 2.1, using the following logic:
 
-- if the product is already selected, it will be removed from the selection (`Array.unshift`)
-- if the product is not yet selected, it will be pushed to the selection (`Array.splice`)
+- if the product is already selected, it will be removed from the selection (`Array.splice`)
+- if the product is not yet selected, it will be pushed to the selection (`Array.push`)
 
 We need to operate on the reactive stream value. The `BehaviorSubject` provides a convenient method to retrieve the current value.
 
@@ -68,7 +66,7 @@ private persistSubscription = this.statePersistenceService.syncWithStorage({
 
 The `onRead` method will set the _next_ value of the `selection$` subject.
 
-It is important to clean up subscriptions when the service is destroyed. You can do this by implementing the `OnDestroy`:
+It is important to clean up subscriptions when the service is destroyed, otherwise you introduce a memory leak. You can do this by implementing the `OnDestroy`:
 
 ```ts
 export class ComparisonSelectionService implements OnDestroy {
@@ -77,8 +75,6 @@ export class ComparisonSelectionService implements OnDestroy {
   }
 }
 ```
-
-If you like to verify your code, you can compare it to the [`comparison-selection.service.ts` provide in the src folder](./src/product-comparison/services/comparison-selection.service.ts).
 
 ## Summary
 

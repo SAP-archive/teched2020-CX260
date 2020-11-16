@@ -62,24 +62,14 @@ The generated _component_ is actually automatically declared in the list of comp
 We will delegate logic to services, and for the selection component we will now generate a service up front:
 
 ```
-ng g s services/selection
+ng g s product-comparison/comparison-selection/comparison-selection
 ```
 
-(This is short for `ng generate comparison-service`)
+(This is short for `ng generate service`)
 
 We're not yet adding this service in the code, but use it later in this exercise.
 
-### Step 4: Interface
-
-To ensure your code is type-safe, we'll generate file that can hold various interfaces for the feature:
-
-```
-ng g i product-comparison/model
-```
-
-(This is short for `ng generate interface`)
-
-You can already add the interface that you need in the following exercise:
+We do however already add an interface that to the service file.
 
 ```ts
 export interface SelectionState {
@@ -94,7 +84,7 @@ You might have noticed that you the dev server picks up changes that you do to t
 
 That being said, we haven't added the new component anywhere in the UI, which is why you won't see any changes so far. There are various approaches to do so, in this case we're like to do as little as possible. We'll add the generated `ComparisonSelectionComponent` as-is to the PDP, specifically under the add-to-cart button.
 
-Spartacus provides an utility function (`provideOutlet`) that you can leverage to provide angular components to existing spartacus components. The following code snippets shows how you can add the `ComparisonSelectionComponent` next to the add-to-cart button:
+Spartacus provides an utility function since version 3.0 (`provideOutlet`) that you can leverage to provide angular components to existing spartacus components. The following code snippets shows how you can add the `ComparisonSelectionComponent` next to the add-to-cart button:
 
 ```ts
 import { NgModule } from '@angular/core'

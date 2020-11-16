@@ -22,7 +22,7 @@ The modules export various components and directives that we leverage in the hea
 
 ## Exercise 6.2 Implement component logic
 
-We can now implement our component logic. We delegate most of the logic to the `ProductComparisonService`. The implementation of this service can be found [in the source](./src/product-comparison/services/product-comparison.service.ts), given that's a fair amount of code, we're not going over it line by line.
+We can now implement our component logic. We delegate most of the logic to the `ProductComparisonService`. The implementation of this service can be found source, given that's a fair amount of code, we're not going over it line by line. We've however added some inline documentation for you to understand what's going on.
 
 Let's leverage the `ProductComparisonService` in the new header component. We bring in the selected products to the header component and reuse the toggle method that we've added in exercise 3.1.
 
@@ -43,10 +43,10 @@ export class ComparisonHeaderComponent {
 We're going to observe the list of selected products (`products$`) and render the product image, name and price. If there's no single product selected, we render an alternative text (templateRef `#empty`).
 
 ```html
-<thead>
-  <tr *ngIf="products$ | async as productList; else empty">
+<ng-container *ngIf="products$ | async as products">
+  <thead>
     <th></th>
-    <th *ngFor="let product of productList">
+    <th *ngFor="let product of products">
       <button
         (click)="remove(product.code)"
         class="close"
@@ -55,16 +55,11 @@ We're going to observe the list of selected products (`products$`) and render th
       <a [routerLink]="{ cxRoute: 'product', params: product } | cxUrl">
         <cx-media [container]="product.images?.PRIMARY"></cx-media>
         <div>{{ product.name }}</div>
-        <div>{{ product.price.formattedValue }}</div>
+        <div>{{ product.price?.formattedValue }}</div>
       </a>
     </th>
-  </tr>
-  <ng-template #empty>
-    <tr>
-      <td>No products to compare.</td>
-    </tr>
-  </ng-template>
-</thead>
+  </thead>
+</ng-container>
 ```
 
 There might a few new gotchas for you with this implementation
@@ -76,10 +71,12 @@ There might a few new gotchas for you with this implementation
 We're adding a few style rules to the scss file:
 
 ```scss
+:host {
+  display: contents;
+}
 a {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 cx-media {
@@ -87,23 +84,41 @@ cx-media {
 }
 ```
 
-## Exercise 6.4 Add header
-
-To import the header component we must do 2 things:
-
-1. export the `ComparisonHeaderComponent` in the `ComparisonHeaderModule`
-
-2. add the `app-comparison-header` to the html of the `ComparisonTableComponent`:
+Additionally, you might want to add the star-rating component. The star rating module should be imported, so that you can use the component:
 
 ```html
-<table>
-  <app-comparison-header></app-comparison-header>
-</table>
+<cx-star-rating [rating]="product.averageRating"></cx-star-rating>
 ```
+
+## Exercise 6.4 Add header
+
+Now that we've implemented the header logic, we must add it to the comparison table component. This requires 2 steps:
+
+1. Export the `ComparisonHeaderComponent` in the `ComparisonHeaderModule`, so that we can _select_ it outside the module.
+
+   ```ts
+   @NgModule({
+     ...
+     exports: [ComparisonHeaderComponent],
+   })
+   export class ComparisonHeaderModule {}
+   ```
+
+2. Add the `app-comparison-header` to the `ComparisonTableComponent`:
+
+   ```html
+   <table *ngIf="products$ | async as products; else empty">
+     <app-comparison-header></app-comparison-header>
+   </table>
+   <ng-template #empty> No products to compare. </ng-template>
+   ```
 
 ## Summary
 
 Now that you've added the header to the `ComparisonTableComponent`, you should be able to see the selected products on the comparison page.
+
+![](./images/comparison-header.png)
+
 We will implement more comparison attributes in the next exercise.
 
 💡 If you haven't done already, it's a good time again to commit your changes.
