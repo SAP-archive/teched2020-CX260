@@ -18,10 +18,10 @@ ng g s product-comparison/comparison-features/comparison-features
 ng g i product-comparison/comparison-features/model
 ```
 
-We're going to use a the `IconModule` again as well the `FormsModule` (`@angular/forms`), so let's import those in the generated `ComparisonFeaturesModule`. We also need to export the generated the `ComparisonFeaturesComponent` from it's module, so that we can use it in the `ComparisonTableModule`. Let's import the module and use it in the table component next to the header component from the previous exercise:
+We're going to use a the `IconModule`, so let's import this module in the generated `ComparisonFeaturesModule`. We also need to export the generated the `ComparisonFeaturesComponent` from it's module, so that we can use it in the `ComparisonTableModule`. Let's import the module and use it in the table component next to the header component from the previous exercise:
 
 ```html
-<table *ngIf="products$ | async as products; else empty">
+<table>
   <app-comparison-header></app-comparison-header>
   <app-comparison-features></app-comparison-features>
 </table>
@@ -31,10 +31,10 @@ You should already see the new features component appearing in the storefront, i
 
 ## Exercise 7.2 ComparisonFeaturesService
 
-The implementation of the `ComparisonFeaturesService` is fairly complex. We're not going over this implementation in detail, as there's nothing Spartacus specific to it. You can copy it from the provided source, and read through the inline comments if you like to understand how it works. A few gotchas on this implementation:
+The implementation of the `ComparisonFeaturesService` is fairly complex. We're not going over this implementation in detail, as there's nothing Spartacus specific to it. You can copy [the implementation](https://github.com/SAP-samples/teched2020-CX260/blob/exercises/7-comparison-features/sample-storefront/src/app/product-comparison/comparison-features/comparison-features.service.ts) from the sample code and read through the inline comments if you like to understand how it works. A few gotchas on this implementation:
 
 - We're comparing the products by product feature groups (Classifications), feature (Classification Features) and feature values.
-- We've introduced a few types to improve type safety in the implementation
+- We've introduced a few interfaces to improve type safety in the implementation, you should also copy those over [from the sample code](https://github.com/SAP-samples/teched2020-CX260/blob/exercises/7-comparison-features/sample-storefront/src/app/product-comparison/comparison-features/model.ts).
 - If you're familiar with the SAP commerce classification system, you will better understand the data model
 - We compare the the actual values, and generate a single string value to show in the UI
 - We resolve the value type, so that we can show various content in the UI (i.e. boolean checkbox)
@@ -194,6 +194,17 @@ hasComparableProperties(category: ProductComparisonCategory): boolean {
 }
 ```
 
+The styling for the equal properties can be added to the component style file:
+
+```scss
+tbody,
+tr {
+  &.is-equal {
+    color: lightgray;
+  }
+}
+```
+
 ### Hide comparable properties
 
 Last but not least, we introduce a toggle to completely hide equal properties from the comparison table. This will help a lot to understand the differences, especially when the list of differences is huge.
@@ -204,7 +215,7 @@ We introduce a checkbox in the UI that the user can use to toggle the visibility
 <button
   *ngIf="products.length > 1"
   (click)="hideEqual = !hideEqual"
-  [innerText]="hideEqual ? 'Show differences only' : 'Show all features'"
+  [innerText]="hideEqual ? 'Show all features' : 'Show differences only'"
 ></button>
 ```
 
@@ -250,4 +261,4 @@ That's it. You should now have the following experience:
 
 ## Summary
 
-We hope you enjoyed the exercises!
+That's it! We hope you enjoyed the exercises. If you like to verify your code with the sample code that we've provided, you can look the [sample code](https://github.com/SAP-samples/teched2020-CX260/tree/exercises/7-comparison-features/sample-storefront/src/app/product-comparison).
