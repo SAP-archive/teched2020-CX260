@@ -6,7 +6,7 @@ This repository contains the material for the SAP TechEd 2020 session called CX2
 
 ## Overview
 
-The exercises in this session shows you how to develop a PWA storefront using the Spartacus libraries, and provides an introduction to the fundamentals of Spartacus. You'll develop your own Spartacus storefront, and add some customizations on top of the standards components.
+With the exercises in this session you'll gain how to develop a PWA storefront using the Spartacus libraries. You will setup a local Spartacus application and implement a customization on top of it. The customization will learn you various concepts and techniques.
 
 ## Come prepared!
 
@@ -44,6 +44,10 @@ There are also a few other [recommendations](./prerequisites.md#recommendations)
   - Exercise 7.2 ComparisonFeaturesService
   - Exercise 7.3 Implement comparison component (basic)
   - Exercise 7.4 Implement comparison component (advanced)
+
+The end result of the exercises is a full blown product comparison feature, with the following UI:
+
+![](./exercises/exercise-7/images/comparison-component-final.png)
 
 **IMPORTANT**
 

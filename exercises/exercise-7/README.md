@@ -2,7 +2,7 @@
 
 In this exercise, you will implement the meaty part of the product comparison, the features. This is based on the product features (aka classifications). This requires some comparison logic, as we need to group features and be able to indicate whether the feature values are equal cross products. We'll then use the logic in the view logic to conveniently show/hide equal values, so that the end user can focus on the differences.
 
-## Exercise 7.1 Code scaffolding and importing.
+## Exercise 7.1 Code scaffolding and importing
 
 We're implementing the comparison features in a separate module, component and service. Let's do some more code scaffolding:
 
@@ -29,7 +29,7 @@ We're going to use a the `IconModule` again as well the `FormsModule` (`@angular
 
 You should already see the new features component appearing in the storefront, it should show the scaffolded text "comparison-features works!".
 
-## Exercise 7.1 ComparisonFeaturesService
+## Exercise 7.2 ComparisonFeaturesService
 
 The implementation of the `ComparisonFeaturesService` is fairly complex. We're not going over this implementation in detail, as there's nothing Spartacus specific to it. You can copy it from the provided source, and read through the inline comments if you like to understand how it works. A few gotchas on this implementation:
 
@@ -41,7 +41,7 @@ The implementation of the `ComparisonFeaturesService` is fairly complex. We're n
 - We resolve whether values are equal, so that we can hide those values in the UI
 - We've introduce a `hideEqual` flag on the service, to control wether all features should be shown, or only the once that differ. While the state of the `hideEqual` flag is globally persisted over the session, you could add this to the selection state, so that it will remain cross sessions.
 
-## Exercise 7.2 Implement comparison component (basic)
+## Exercise 7.3 Implement comparison component (basic)
 
 Similar to the comparison header, we're going to leverage the feature service in the component. The only difference this time around is that we require the `ATTRIBUTES` scope. The list of products will be used to build the comparison features using the `comparisonFeaturesService.build()` method.
 
@@ -115,7 +115,7 @@ tr {
 
 ![](./images/comparison-component-basic.png)
 
-## Exercise 7.2 Implement comparison component (advanced)
+## Exercise 7.4 Implement comparison component (advanced)
 
 We'll further enhance the basic implementation of the comparison component:
 
@@ -246,7 +246,7 @@ button {
 
 That's it. You should now have the following experience:
 
-![](./images/comparison-component-advanced.png)
+![](./images/comparison-component-final.png)
 
 ## Summary
 
