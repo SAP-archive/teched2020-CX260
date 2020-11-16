@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { translationChunksConfig, translations } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { AppComponent } from './app.component';
+import { ProductComparisonModule } from './product-comparison/product-comparison.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,6 +30,7 @@ import { AppComponent } from './app.component';
         level: '3.0',
       },
     }),
+    ProductComparisonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
