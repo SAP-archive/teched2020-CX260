@@ -9,7 +9,7 @@ ng new sample-storefront --routing=false --style=scss
 cd sample-storefront
 ng add @spartacus/schematics@next \
   --baseUrl=https://spartacus-demo.eastus.cloudapp.azure.com:8443 \
-  --occPrefix=/occ/v2 --baseSite=electronics-spa
+  --occPrefix=/occ/v2/ --baseSite=electronics-spa
 ```
 
 If you like to better understand these commands, you can go through the sub exercises below.

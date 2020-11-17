@@ -69,7 +69,7 @@ ng g s product-comparison/comparison-selection/comparison-selection
 
 We're not yet adding this service in the code, but use it later in this exercise.
 
-We do however already add an interface that to the service file.
+We do however already add an interface to the service file.
 
 ```ts
 export interface SelectionState {
@@ -82,14 +82,13 @@ export interface SelectionState {
 
 You might have noticed that you the dev server picks up changes that you do to the included code, and rebuilds the application on the fly. Moreover, the browser will automatically refresh so that changes are incorporated quickly.
 
-That being said, we haven't added the new component anywhere in the UI, which is why you won't see any changes so far. There are various approaches to do so, in this case we're like to do as little as possible. We'll add the generated `ComparisonSelectionComponent` as-is to the PDP, specifically under the add-to-cart button.
+That being said, we haven't added the new component anywhere in the UI, which is why you won't see any changes so far. There are various approaches to do so, in this case we would like to do as little as possible. We'll add the generated `ComparisonSelectionComponent` as-is to the PDP, specifically under the add-to-cart button.
 
-Spartacus provides an utility function since version 3.0 (`provideOutlet`) that you can leverage to provide angular components to existing spartacus components (if you're on <3.0 version, you can use the utility function that we've provided in the sample). The following code snippets shows how you can add the `ComparisonSelectionComponent` next to the add-to-cart button. You also must import the `ComparisonSelectionModule` to ensure that all dependencies of the component will be available at runtime.
+Spartacus provides an utility function since version 3.0 (`provideOutlet`) that you can leverage to provide Angular components to existing spartacus components (if you're on <3.0 version, you can use the utility function that we've provided in the [sample](https://github.com/SAP-samples/teched2020-CX260/blob/exercices/2-product-comparison-selection-component/sample-storefront/src/app/utils/outlet-utils.ts)). The following code snippets shows how you can add the `ComparisonSelectionComponent` next to the add-to-cart button. You also must import the `ComparisonSelectionModule` to ensure that all dependencies of the component will be available at runtime.
 
 ```ts
 import { NgModule } from '@angular/core'
 import {
-  OutletPosition,
   OutletPosition,
   provideOutlet,
 } from '@spartacus/storefront'
@@ -119,9 +118,9 @@ We like to bring in a checkbox selection that we can use to add the product to t
 
 ### Step 1: Controller logic
 
-To control the selection, we delegate the logic to the `ComparisonSelectionService` that we've generated in exercise 2.1.
+We'll the following to the `ComparisonSelectionComponent` constructor.
 
-We'll add this service to the constructor, we also add the `CurrentProductService` (from `@spartacus/storefront`) to get hold of the current product code, that we like to select. Our constructor will look like this:
+To control the selection, we delegate the logic to the `ComparisonSelectionService` that we've generated in exercise 2.1. We also add the `CurrentProductService` (from `@spartacus/storefront`) to get hold of the current product code that we would like to select. Our constructor will look like this:
 
 ```ts
 constructor(
