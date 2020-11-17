@@ -40,7 +40,8 @@ export class ComparisonSelectionModule {}
 
 Once you've added those pieces, you should be able link to the page in the UI:
 
-![alt text](./images/comparison-page-link.png){width=300px}
+<img src="./images/comparison-page-link.png" width="500">
+
 
 ## Summary
 
