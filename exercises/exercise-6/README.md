@@ -12,7 +12,7 @@ ng g m product-comparison/comparison-header
 ng g c product-comparison/comparison-header
 ```
 
-We're going to use a number of Spartacus components in the header module, which is why we isolate the component in its own module. You should add the following modules to the generated `ComparisonHeaderModule`:
+We're going to use a number of Spartacus components in the header module, which is why we isolate the component in its own module. You should add the following modules to the imports in the generated `ComparisonHeaderModule`:
 
 - `RouterModule` from `@angular/router`
 - `UrlModule` from `@spartacus/core`
@@ -30,10 +30,10 @@ Let's leverage the `ProductComparisonService` in the new header component. We br
 export class ComparisonHeaderComponent {
   constructor(private comparisonService: ProductComparisonService) {}
 
-  products$ = this.comparisonService.getList([ProductScope.DETAILS])
+  products$ = this.comparisonService.getList([ProductScope.DETAILS]);
 
   remove(code: string): void {
-    this.comparisonService.toggle(code)
+    this.comparisonService.toggle(code);
   }
 }
 ```
@@ -105,7 +105,7 @@ Now that we've implemented the header logic, we must add it to the comparison ta
    export class ComparisonHeaderModule {}
    ```
 
-2. Import the `ComparisonHeaderModule` and add the `app-comparison-header` to the `ComparisonTableComponent`:
+2. Import the `ComparisonHeaderModule` in the `ComparisonTableModule` and add the `app-comparison-header` to the `ComparisonTableComponent`:
 
    ```html
    <table>

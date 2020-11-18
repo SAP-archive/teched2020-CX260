@@ -54,7 +54,7 @@ Please note that we persist the selection in this exercise in local storage with
 
 Spartacus offers an utility service that you can use to synchronize state to persistent storage , such as `localStorage` and `sessionStorage`. There are some nice features available to persist the state cross different sites (multi-site), but in this exercise we focus on the bare minimum persistence.
 
-The `StatePersistenceService` synchronizes an observable. The utility creates an subscription which we must manage in our code. Yuu can use the `StatePersistenceService` from the dependency system and resolve a subscription from the `syncWithStorage` method:
+The `StatePersistenceService` synchronizes an observable. The utility creates an subscription which we must manage in our code. You can inject the `StatePersistenceService` from the dependency system by adding it to the constructor and resolve a subscription from the `syncWithStorage` method:
 
 ```ts
 private persistSubscription = this.statePersistenceService.syncWithStorage({
@@ -73,7 +73,7 @@ It is important to clean up subscriptions when the service is destroyed, otherwi
 ```ts
 export class ComparisonSelectionService implements OnDestroy {
   ngOnDestroy(): void {
-    this.persistSubscription.unsubscribe()
+    this.persistSubscription.unsubscribe();
   }
 }
 ```

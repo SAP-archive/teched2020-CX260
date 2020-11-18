@@ -18,7 +18,7 @@ ng g s product-comparison/comparison-features/comparison-features
 ng g i product-comparison/comparison-features/model
 ```
 
-We're going to use a the `IconModule`, so let's import this module in the generated `ComparisonFeaturesModule`. We also need to export the generated the `ComparisonFeaturesComponent` from it's module, so that we can use it in the `ComparisonTableModule`. Let's import the module and use it in the table component next to the header component from the previous exercise:
+We're going to use the `IconModule`, so let's import this module in the generated `ComparisonFeaturesModule`. We also need to export the generated `ComparisonFeaturesComponent` from its module, so that we can use it in the `ComparisonTableModule`. Let's import the module and use it in the table component next to the header component from the previous exercise:
 
 ```html
 <table>
@@ -52,11 +52,11 @@ export class ComparisonFeaturesComponent {
     private comparisonFeaturesService: ComparisonFeaturesService
   ) {}
 
-  products$ = this.comparisonService.getList([ProductScope.ATTRIBUTES])
+  products$ = this.comparisonService.getList([ProductScope.ATTRIBUTES]);
 
   list$ = this.products$.pipe(
     map((products) => this.comparisonFeaturesService.build(products))
-  )
+  );
 }
 ```
 
@@ -207,9 +207,9 @@ tr {
 
 ### Hide comparable properties
 
-Last but not least, we introduce a toggle to completely hide equal properties from the comparison table. This will help a lot to understand the differences, especially when the list of differences is huge.
+Last but not least, let's introduce a toggle to completely hide equal properties from the comparison table. This will help a lot to understand the differences, especially when the list of differences is huge.
 
-We introduce a checkbox in the UI that the user can use to toggle the visibility:
+Let's introduce a checkbox in the `comparison-features` UI that the user can use to toggle the visibility:
 
 ```html
 <button
