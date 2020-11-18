@@ -49,9 +49,6 @@ The end result of the exercises is a full blown product comparison feature, with
 
 ![](./exercises/exercise-7/images/comparison-component-final.png)
 
-**IMPORTANT**
-
-Your repo must contain the .reuse and LICENSES folder and the License section below. DO NOT REMOVE the section or folders/files. Also, remove all unused template assets(images, folders, etc) from the exercises folder.
 
 ## How to obtain support
 
