@@ -16,6 +16,12 @@ If you like to better understand these commands, you can go through the sub exer
 
 ---
 
+**NOTE on Angular 11**
+
+Spartacus 3.0 supports Angular 10. However, Angular 11 was lately released, and so far there are no known issues with Spartacus 3.0 on Angular 11. To be on the safe side, you should use angular 10.
+
+---
+
 ## Exercise 1.1 Confirm prerequisites
 
 If you went through the [prerequisites](../../prerequisites.md) already you can skip this exercise and start exercise 1.2.
