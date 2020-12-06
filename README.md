@@ -21,7 +21,7 @@ There are also a few other [recommendations](./prerequisites.md#recommendations)
   - Exercise 1.2 Create Angular application
   - Exercise 1.3 Install Spartacus
   - Exercise 1.4 Run Spartacus
-- [Implement Product Comparison Selection](exercises/exercise-2/README.md)
+- [Exercise 2 - Implement Product Comparison Selection](exercises/exercise-2/README.md)
   - Exercise 2.1 Generate files with the Angular CLI
   - Exercise 2.2 Add component to PDP
   - Exercise 2.3 Selection implementation
