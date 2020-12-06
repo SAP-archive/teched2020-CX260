@@ -29,7 +29,6 @@ If you went through the [prerequisites](../../prerequisites.md) already you can 
 Ensure that you have the prerequisites in place by the validating the following commands in a terminal:
 
 - Run `node --version` to confirm the Node.js version on your local system. The version should be between `10.14.1` and `13`. Later version might work, but are not actively tested.
-- Run `yarn --version` to confirm the version of [Yarn](https://yarnpkg.com/) on your local system. The version should be 1.15 or later. If you like to use npm instead you should be fine, but we're not actively testing this.
 - Run `ng --version` to confirm the Angular CLI version. Spartacus 3.x supports Angular 10.
 
 ## Exercise 1.2 Create Angular application
@@ -42,7 +41,7 @@ ng new sample-storefront --routing=false --style=scss
 
 This creates a new Angular application, called "sample-storefront", without routing and using the SCSS style syntax.
 
-You can run the newly created application by executing `yarn start` in the terminal. You should run this inside the newly created application folder, so you probably need to run `cd sample-storefront` upfront.
+You can run the newly created application by executing `ng serve` in the terminal. You should run this inside the newly created application folder, so you probably need to run `cd sample-storefront` upfront.
 The dev server starts by default on port 4200; You can open the application, using: http://localhost:4200.
 
 ---
