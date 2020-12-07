@@ -13,7 +13,7 @@ It is important to understand that the `label` property of the new page will be 
 
 You are now able to visit the comparison page, but it will be empty. We have not yet added any content which is why you will only see the header and footer. The header and footer components are derived from the cms page template.
 
-![alt text](./images/empty-comparison-page.png)
+<img src="./images/empty-comparison-page.png" width="500">
 
 ## Exercise 4.2 Add a link to the comparison page
 
@@ -46,7 +46,7 @@ Once you've added those pieces, you should be able link to the page in the UI:
 
 You've now implemented the link to the (empty) comparison page. We're now ready to implement the actual comparison table.
 
-If you like to validate your implementation, you can find the (actual implementation of the component]https://github.com/SAP-samples/teched2020-CX260/tree/exercises/4-comparison-page/sample-storefront/src/app/product-comparison/comparison-selection) in the sample code.
+If you like to validate your implementation, you can find the [actual implementation of the component](https://github.com/SAP-samples/teched2020-CX260/tree/exercises/4-comparison-page/sample-storefront/src/app/product-comparison/comparison-selection) in the sample code.
 
 💡 If you haven't done already, it's a good time again to commit your changes.
 

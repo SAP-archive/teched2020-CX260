@@ -9,10 +9,16 @@ ng new sample-storefront --routing=false --style=scss
 cd sample-storefront
 ng add @spartacus/schematics@next \
   --baseUrl=https://spartacus-demo.eastus.cloudapp.azure.com:8443 \
-  --occPrefix=/occ/v2/ --baseSite=electronics-spa
+  --baseSite=electronics-spa
 ```
 
 If you like to better understand these commands, you can go through the sub exercises below.
+
+---
+
+**NOTE on Angular 11**
+
+Spartacus 3.0 supports Angular 10. However, Angular 11 was lately released, and so far there are no known issues with Spartacus 3.0 on Angular 11. To be on the safe side, you should use angular 10.
 
 ---
 
@@ -23,7 +29,6 @@ If you went through the [prerequisites](../../prerequisites.md) already you can 
 Ensure that you have the prerequisites in place by the validating the following commands in a terminal:
 
 - Run `node --version` to confirm the Node.js version on your local system. The version should be between `10.14.1` and `13`. Later version might work, but are not actively tested.
-- Run `yarn --version` to confirm the version of [Yarn](https://yarnpkg.com/) on your local system. The version should be 1.15 or later. If you like to use npm instead you should be fine, but we're not actively testing this.
 - Run `ng --version` to confirm the Angular CLI version. Spartacus 3.x supports Angular 10.
 
 ## Exercise 1.2 Create Angular application
@@ -36,7 +41,7 @@ ng new sample-storefront --routing=false --style=scss
 
 This creates a new Angular application, called "sample-storefront", without routing and using the SCSS style syntax.
 
-You can run the newly created application by executing `yarn start` in the terminal. You should run this inside the newly created application folder, so you probably need to run `cd sample-storefront` upfront.
+You can run the newly created application by executing `ng serve` in the terminal. You should run this inside the newly created application folder, so you probably need to run `cd sample-storefront` upfront.
 The dev server starts by default on port 4200; You can open the application, using: http://localhost:4200.
 
 ---
@@ -47,14 +52,14 @@ The dev server starts by default on port 4200; You can open the application, usi
 
 ## Exercise 1.3 Install Spartacus
 
-Once you have generated you Angular application, you can add Spartacus to it. You can add dependencies using `yarn add`, however the amount of direct and indirect packages can be cumbersome to add. Therefor Spartacus provides an _installer_ process that simplifies the installation. The installer is based on [Angular schematics](https://angular.io/guide/schematics) and can be added by the `ng add` command.
+Once you have generated you Angular application, you can add Spartacus to it. You could add dependencies using `yarn add`, however the amount of direct and indirect packages can be cumbersome to add. Therefor Spartacus provides an _installer_ process that simplifies the installation. The installer is based on [Angular schematics](https://angular.io/guide/schematics) and can be added by the `ng add` command.
 
 To simplify the default configuration of spartacus even more, we're adding few more parameters.
 
 ```shell
 ng add @spartacus/schematics@next \
   --baseUrl=https://spartacus-demo.eastus.cloudapp.azure.com:8443 \
-  --occPrefix=/occ/v2/ --baseSite=electronics-spa
+  --baseSite=electronics-spa
 ```
 
 **Note**: the backslash is only used to make the command better readable. It will be ignored when you paste it in you terminal.
@@ -75,11 +80,19 @@ You can run your local Spartacus application, using the following command:
 ng serve
 ```
 
-This command will run the angular dev server
+This command will run the angular dev server.
 
 Once the application is started, you can launch it in the browser: [http//:localhost:4200](http//:localhost:4200).
 
 Moreover, you can start developing your application without restarting the server. The changes will be _hot deployed_ and your browser will auto refresh so that you can quickly evaluate the changes.
+
+---
+
+**NOTE**
+
+If you happen to see a blank page, you probably need to accept the _insecure_ backend (https://spartacus-demo.eastus.cloudapp.azure.com:8443/occ/v2). The backend that we offer in this exercise doesn't come with a SSL certificate, which is why the browser will block this request. The easiest to do is to open [a random request](https://spartacus-demo.eastus.cloudapp.azure.com:8443/occ/v2/basesites) in another browser tab, and accept the insecure communication. After this you can refresh the Spartacus application in the browser.
+
+---
 
 ## Summary
 
