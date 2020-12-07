@@ -5,7 +5,7 @@ In this exercise, you will create product comparison page. You'll learn the basi
 ## Exercise 4.1 Setup the CMS Comparison Content Page
 
 Each page in a Spartacus storefront is (by default) driven by the page structure provided by the CMS API. The structure contains the header and footer content as well as the actual page content.
-To render the comparison page in Spartacus, we like to follow this approach. Therefor, we must introduce a new page in the CMS.
+To render the comparison page in Spartacus, we like to follow this approach. Therefore, we must introduce a new page in the CMS.
 
 If you're using the public backend, you actually won't need to do this, as we've been doing this as a preparation of this course. If you are using a custom backend (i.e. running SAP Commerce on you local machine), you can either create the page manually in SmartEdit or Backoffice, or use an example [ImpEx script](./comparison-page.impex) to generate the page.
 
