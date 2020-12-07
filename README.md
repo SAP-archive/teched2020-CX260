@@ -53,6 +53,13 @@ The end result of the exercises is a full blown product comparison feature, with
 
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../issues) tab.
 
+Additionally, you can find more about Spartacus at the following places:
+
+- [Github repository](https://github.com/SAP/spartacus/)
+- [Documentation](https://sap.github.io/spartacus-docs/)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/spartacus-storefront)
+- [Slack](https://join.slack.com/t/spartacus-storefront/shared_invite/zt-jekftqo0-HP6xt6IF~ffVB2cGG66fcQ)
+
 ## License
 
 Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
