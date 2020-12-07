@@ -39,7 +39,7 @@ Now that we have a selection, we can expose the selected state for a given produ
 
 ```ts
 get(code: string): Observable<SelectionState> {
-    return this.selection$.pipe(
+    return this.selection$.asObservable().pipe(
       map((state) => ({ code, selected: state.includes(code) }))
     );
 }
