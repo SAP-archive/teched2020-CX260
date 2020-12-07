@@ -194,7 +194,7 @@ label {
 
 You've now generated an angular module, component and selection and added it to the standard Spartacus UI. You can already see the UI of Spartacus being effected by this change, but we will add the actual selection logic in the next exercise.
 
-If you like to validate your implementation, you can find the actual implementation for this exercise in [dedicated branch for exercise 2](https://github.com/SAP-samples/teched2020-CX260/tree/exercices/2-product-comparison-selection-component/sample-storefront/src/app).
+If you like to validate your implementation, you can find the actual implementation for this exercise in [dedicated branch for exercise 2](https://github.com/SAP-samples/teched2020-CX260/tree/exercises/2-comparison-selection-component/sample-storefront/src/app).
 
 💡 If you haven't done already, it's a good time again to commit your changes.
 
