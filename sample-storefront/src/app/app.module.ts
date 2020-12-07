@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
       backend: {
         occ: {
           baseUrl: 'https://spartacus-demo.eastus.cloudapp.azure.com:8443',
-          prefix: '/occ/v2/',
         },
       },
       context: {
