@@ -2,12 +2,13 @@
 
 In this exercise, you will implement the selection service. We've generated the `ComparisonSelectionService` in the previous example, but we need to implement the logic.
 
+This exercise doesn't introduce any Spartacus specific concepts, if you like to move faster, you can copy the [implementation](https://github.com/SAP-samples/teched2020-CX260/blob/exercises/3-comparison-selection-service/sample-storefront/src/app/product-comparison/comparison-selection/comparison-selection.service.ts) and move to the next [exercises](../exercise-4/README.md).
+
 ## Exercise 3.1 Toggle selection
 
-We'll start implementing the selection state in the service. The selection state represents the
-in memory state of the product comparison selection that remains persistent in memory as long as the user is in the storefront. When the user leaves the storefront, the selection will no longer remain. We persist it in the next exercise.
+We'll start implementing the selection state in the service. The selection state represents the in memory state of the product comparison selection that remains persistent in memory as long as the user is in the storefront. When the user leaves the storefront, the selection will no longer remain. We persist it in the next exercise.
 
-There are many ways to persist the state, and there's nothing Spartacus specific to this. We use a local _BehaviorSubject_ to store the selection. We use a reactive pattern here, so that we can _observe_ any changes and react on this in the UI.
+There are different ways to persist the state, we use a local _BehaviorSubject_ to store the selection. The _BehaviorSubject_ can be used to _observe_ the changes in the UI component.
 
 ```ts
 readonly selection$ = new BehaviorSubject([]);
@@ -84,7 +85,7 @@ You can validate your solution by looking at the local storage in your devtools.
 
 You've now implemented the persisted state for the selection service. We're now ready to add the comparison page that we'll link up to the product detail page.
 
-If you like to validate your implementation, you can find the (actual implementation of the selection service](https://github.com/SAP-samples/teched2020-CX260/blob/exercises/3-comparison-selection-service/sample-storefront/src/app/product-comparison/comparison-selection/comparison-selection.service.ts).
+If you like to validate your implementation, you can find the [actual implementation of the selection service](https://github.com/SAP-samples/teched2020-CX260/blob/exercises/3-comparison-selection-service/sample-storefront/src/app/product-comparison/comparison-selection/comparison-selection.service.ts).
 
 💡 If you haven't done already, it's a good time again to commit your changes.
 
