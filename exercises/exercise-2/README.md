@@ -1,8 +1,10 @@
 # Exercise 2 - Implement Product Comparison Selection
 
-In this exercise, you will implement a button that can be used to select a product for the comparison. The button will be added to the Product Detail Page (PDP).
+In this exercise, you will implement a checkbox that can be used to select a product for the comparison. The checkbox will be added to the Product Detail Page (PDP), underneath the add to cart button.
 
-We're going to gradually generate and build code in this exercise.
+<img src="./images/comparison-checkbox.png" width="300">
+
+We're going to gradually generate and build the code in this exercise.
 
 ## Exercise 2.1 Generate files with the Angular CLI
 
@@ -10,9 +12,9 @@ In this exercise we're using the Angular CLI to generate files that host modules
 
 ### Step 1: Product Comparison Module
 
-As we're planning to build multiple components and services for this feature, we'll wrap the code in a feature module. The feature module will be used as a single entry point to the feature, so that it can be conveniently added to the AppModule.
+As we're planning to build multiple components and services for this feature, we'll wrap the code in a feature module. The feature module will be used as a single entry point to the feature, so that it can be conveniently added to the `AppModule`.
 
-You can use the [Angular CLI to _generate_](https://angular.io/cli/generate) the feature module `ProductComparisonModule`, by running the following command:
+You can use the [Angular CLI to generate](https://angular.io/cli/generate) the feature module `ProductComparisonModule`, by running the following command:
 
 ```
 ng g m product-comparison
@@ -24,9 +26,7 @@ You should now manually add the newly created module in the import list of the a
 
 ```ts
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     B2cStorefrontModule.withConfig({ ... }),
