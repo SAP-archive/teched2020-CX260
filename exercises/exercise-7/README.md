@@ -2,6 +2,8 @@
 
 In this exercise, you will implement the meaty part of the product comparison, the features. This is based on the product features (aka classifications). This requires some comparison logic, as we need to group features and be able to indicate whether the feature values are equal cross products. We'll then use the logic in the view logic to conveniently show/hide equal values, so that the end user can focus on the differences.
 
+<img src="./images/comparison-component-final.png" width="500px">
+
 ## Exercise 7.1 Code scaffolding and importing
 
 We're implementing the comparison features in a separate module, component and service. Let's do some more code scaffolding:
@@ -27,7 +29,7 @@ We're going to use the `IconModule`, so let's import this module in the generate
 </table>
 ```
 
-You should already see the new features component appearing in the storefront, it should show the scaffolded text "comparison-features works!".
+You should now already see the new features component appearing in the storefront, it should show the scaffolded text "comparison-features works!".
 
 ## Exercise 7.2 ComparisonFeaturesService
 
@@ -254,10 +256,6 @@ button {
   padding: 10px 20px;
 }
 ```
-
-That's it. You should now have the following experience:
-
-![](./images/comparison-component-final.png)
 
 ## Summary
 
