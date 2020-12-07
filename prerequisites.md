@@ -2,9 +2,9 @@
 
 ## Local Development Environment
 
-Spartacus developer use nodejs for development. There are various tools that require nodejs, such as the Angular CLI, typescript compiler and local development server.
+Spartacus developer uses nodejs for development. There are various tools that require nodejs, such as the Angular CLI, typescript compiler and local development server.
 
-Installing Node.js and other tools might take a bit of time and we have not planned for this during the session. It is therefor **important** that you come prepared.
+Installing Node.js and other tools might take a bit of time and we have not planned for this during the session. It is therefore **important** that you come prepared.
 
 - **Node.js**  
   Spartacus supports node.js version 10.14.1 or later, but smaller than version 13.0. Other Node.js versions might work, but are not actively tested.
