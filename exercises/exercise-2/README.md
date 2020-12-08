@@ -83,7 +83,7 @@ You might have noticed that you the dev server picks up changes that you do to t
 
 That being said, we haven't added the new component anywhere in the UI, which is why you won't see any changes so far. There are various approaches to do so, in this case we would like to do as little as possible. We'll add the generated `ComparisonSelectionComponent` as-is to the PDP, specifically under the add-to-cart button.
 
-Spartacus provides an utility function since version 3.0 (`provideOutlet`) that you can leverage to provide Angular components to existing spartacus components (if you're on <3.0 version, you can use the utility function that we've provided in the [sample](https://github.com/SAP-samples/teched2020-CX260/blob/exercices/2-product-comparison-selection-component/sample-storefront/src/app/utils/outlet-utils.ts)). The following code snippets shows how you can add the `ComparisonSelectionComponent` next to the add-to-cart button. You also must import the `ComparisonSelectionModule` to ensure that all dependencies of the component will be available at runtime.
+Spartacus provides a utility function since version 3.0 (`provideOutlet`) that you can leverage to provide Angular components to existing spartacus components (if you're on <3.0 version, you can use the utility function that we've provided in the [sample](https://github.com/SAP-samples/teched2020-CX260/blob/main/sample-storefront/src/app/utils/outlet-utils.ts)). The following code snippets shows how you can add the `ComparisonSelectionComponent` next to the add-to-cart button. You also must import the `ComparisonSelectionModule` to ensure that all dependencies of the component will be available at runtime.
 
 ```ts
 import { NgModule } from '@angular/core';
