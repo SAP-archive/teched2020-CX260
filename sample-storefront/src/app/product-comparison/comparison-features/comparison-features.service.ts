@@ -20,9 +20,9 @@ export class ComparisonFeaturesService {
   build(products: Product[]): ProductComparisonCategory[] {
     const comparisonCategories = [];
 
-    products.forEach((product: Product) => {
+    products?.forEach((product: Product) => {
       product.classifications?.forEach((classification: Classification) =>
-        classification.features.forEach((feature: Feature) => {
+        classification.features?.forEach((feature: Feature) => {
           // The backend allows to hide features from the comparison
           if (feature.comparable) {
             this.createFeatureValue(
