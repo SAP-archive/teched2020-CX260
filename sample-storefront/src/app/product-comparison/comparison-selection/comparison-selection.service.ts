@@ -24,9 +24,9 @@ export class ComparisonSelectionService implements OnDestroy {
   });
 
   get(code: string): Observable<SelectionState> {
-    return this.selection$.pipe(
-      map((state) => ({ code, selected: state.includes(code) }))
-    );
+    return this.selection$
+      .asObservable()
+      .pipe(map((state) => ({ code, selected: state.includes(code) })));
   }
 
   toggle(code: string): void {
