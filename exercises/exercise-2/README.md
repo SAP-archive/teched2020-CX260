@@ -84,7 +84,7 @@ You might have noticed that you the dev server picks up changes that you do to t
 
 That being said, we haven't added the new component anywhere in the UI, which is why you won't see any changes so far. There are various approaches to do so, in this case we're like to do as little as possible. We'll add the generated `ComparisonSelectionComponent` as-is to the PDP, specifically under the add-to-cart button.
 
-Spartacus provides an utility function since version 3.0 (`provideOutlet`) that you can leverage to provide angular components to existing spartacus components. The following code snippets shows how you can add the `ComparisonSelectionComponent` next to the add-to-cart button:
+Spartacus provides a utility function since version 3.0 (`provideOutlet`) that you can leverage to provide angular components to existing spartacus components. The following code snippets shows how you can add the `ComparisonSelectionComponent` next to the add-to-cart button:
 
 ```ts
 import { NgModule } from '@angular/core'
