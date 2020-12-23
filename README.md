@@ -1,6 +1,7 @@
 # CX260 - Project "Spartacus" Storefront for SAP Commerce Cloud: Status and Plans
 
 ## Description
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/teched2020-CX260)](https://api.reuse.software/info/github.com/SAP-samples/teched2020-CX260)
 
 This repository contains the material for the SAP TechEd 2020 session called CX260 - Project "Spartacus" Storefront for SAP Commerce Cloud.
 
